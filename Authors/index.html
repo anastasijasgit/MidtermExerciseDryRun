@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Author Directory</h1>
+
+    <!-- Filter Section -->
+    <div class="filters">
+        <input type="text" id="nameFilter" placeholder="Filter by Name">
+        <select id="nationalityFilter">
+            <option value="">All Nationalities</option>
+        </select>
+        <label>
+            <input type="checkbox" id="aliveFilter"> Alive
+        </label>
+        <input type="number" id="activeYearFilter" placeholder="Active in Year">
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+
+    <!-- Authors Table -->
+    <table id="authorsTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable('id')">ID</th>
+                <th onclick="sortTable('name')">Name</th>
+                <th onclick="sortTable('birth_date')">Birth Date</th>
+                <th onclick="sortTable('age')">Age</th>
+                <th onclick="sortTable('alive')">Alive</th>
+                <th onclick="sortTable('nationality')">Nationality</th>
+                <th onclick="sortTable('yearsActive')">Years Active</th>
+                <th onclick="sortTable('bibliography')">Bibliography</th>
+            </tr>
+        </thead>
+        <tbody id="authorsBody">
+            <!-- Data rows will be dynamically generated -->
+        </tbody>
+    </table>
+
+    <!-- Modal for Book Details -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Books by <span id="modalAuthorName"></span></h2>
+            <ul id="bookList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
